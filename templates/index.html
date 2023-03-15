@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Project 3 - Melbourne Rental Market </title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
+  <head>
+  <title>{{title}} </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+
+
 <body id="myPage">
 
 <!-- Sidebar on click -->
@@ -16,8 +21,7 @@
     <i class="fa fa-remove"></i>
   </a>
   <a href="#" class="w3-bar-item w3-button">Github Repository</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-
+  <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
 </nav>
 
 <!-- Navbar -->
@@ -26,24 +30,23 @@
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
   <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team Members</a>
-  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data Analysis</a>
-  <a href="#analysis" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Data Visualisation</a>
+  <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+  <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
 
-    <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button" title="Notifications">Links <i class="fa fa-caret-down"></i></button>     
+   <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button">Links <i class="fa fa-caret-down"></i></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
       <a href="#" class="w3-bar-item w3-button">GitHub Repository</a>
-          <a href="#" class="w3-bar-item w3-button">Link</a>
+          <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
     </div>
   </div>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
     <a href="#team" class="w3-bar-item w3-button">Team</a>
-    <a href="#work" class="w3-bar-item w3-button">Data Analysis</a>
-    <a href="#pricing" class="w3-bar-item w3-button">Data Visualisation</a>
+    <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
+    <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
     
   </div>
 </div>
@@ -98,16 +101,21 @@
 </div>
 </div>
 
-<!-- Work Row -->
+<!-- Overview Row -->
 <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
-<div class="w3-quarter">
-<h2>Dashboard Visualisation</h2>
-<p>Insert short analysis</p>
+<div class="w3-half">
+<h2>Data Visualisation Tools and Libraries</h2>
+
+<h3>
+<img src="https://www.pngfind.com/pngs/m/62-626208_python-logo-png-transparent-background-python-logo-png.png" alt="Python" style="width:10%" class="w3-circle w3-hover-opacity" >
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" alt="Javascipt" style="width:10%" class="w3-circle w3-hover-opacity">
+<img src = "https://cdn.freebiesupply.com/logos/thumbs/2x/leaflet-1-logo.png" alt="Leaflet" style="width:20%" class="w3-circle w3-hover-opacity">
+<img src = "https://www.kindpng.com/picc/m/188-1882416_flask-python-logo-hd-png-download.png" alt="Leaflet" style="width:15%" class="w3-circle w3-hover-opacity">
+
+</h3>
+
 </div>
-
-
-
 
 <!-- Container -->
 <div class="w3-container" style="position:relative">
@@ -115,31 +123,9 @@
   style="position:absolute;top:-28px;right:24px">+</a>
 </div>
 
-<!-- Pricing Row -->
-<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-    <h2>Plots</h2>
-    <p>Data Visuals</p><br>
-    <div class="w3-third w3-margin-bottom">
-      <p> Insert plot and rearrange the divisions as necessary</p>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <p> Insert plot</p>
-    </div>
-
-    <div class="w3-third w3-margin-bottom">
-      <p> Insert plot</p>
-    </div>
-
-
-
-
-
-
 <!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-
-
+<footer class="w3-container w3-teal">
+  <p> </p>
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
     <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
@@ -148,6 +134,8 @@
 </footer>
 
 <script>
+
+
 // Script for side navigation
 function w3_open() {
   var x = document.getElementById("mySidebar");

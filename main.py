@@ -38,14 +38,13 @@ CORS(app)
 def home():
     return render_template("index.html", title = "Project 3- Week 15")
 
+@app.route("/overview")
+def proj_overview():
+    return render_template("plots.html")
 
-@app.route("/library")
-def api_link():
-    return f"/api/all-data-json </br>"
-
-@app.route('/get-pie-chart')
-
-
+@app.route('/rental-map')
+def rental_map():
+    return render_template("map.html")
 
 
 ################################
