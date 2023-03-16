@@ -18,7 +18,6 @@ Mel_Rental = Base.classes.Melbourne_2
 # Flask setup
 app = Flask(__name__)
 CORS(app)
-
 # Flask routes
 @app.route('/data')
 def get_data():
