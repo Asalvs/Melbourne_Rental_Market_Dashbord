@@ -5,8 +5,11 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
+import os
+import json
+
 
 
 
@@ -38,7 +41,7 @@ CORS(app)
 def home():
     return render_template("index.html", title = "Project 3- Week 15")
 
-@app.route("/overview")
+@app.route("/overview/")
 def proj_overview():
     return render_template("plots.html")
 
@@ -61,6 +64,14 @@ def get_data():
        'Latitude': row.Latitude, 'Longitude':row.Longitude, 'Median_rent_weekly': row.Median_rent_weekly})
     session.close()
     return jsonify(data)
+
+@app.route('/api/geojson',methods=['GET','POST'])
+def geojson():
+    json_url = os.path.join("data","Melb_data.json")
+    data_json = json.load(open(json_url))
+
+    return jsonify(data_json)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
