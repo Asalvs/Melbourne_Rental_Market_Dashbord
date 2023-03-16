@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">Melbourne Rental Market Dashboard</a>
+      </div>
+      <div class="subheading">Welcome to Melbourne! Select a suburb from the dropdown to start exploring your neighbourhood</div>
+      <div class="selector">
+        <h5>Suburb</h5>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+    </div>
+  </nav>
+
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Welcome to Melbourne!</div>
+    <div class="sub_title">Explore your new neighbourhood</div>
+  </div>
+</body>
+</html>
+ 
