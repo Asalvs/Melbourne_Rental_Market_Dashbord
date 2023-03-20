@@ -43,12 +43,25 @@ def home():
 
 @app.route("/overview/")
 def proj_overview():
-    return render_template("plots.html")
+    return render_template("overview.html")
 
 @app.route('/rental-map')
 def rental_map():
     return render_template("map.html")
 
+
+###Data Visualisation Routes
+@app.route('/data-viz/pie')
+def pie_chart():
+    return render_template("plot_pie.html")
+
+@app.route('/data-viz/bar')
+def bar_chart():
+    return render_template("plot_bar.html")
+
+@app.route('/data-viz/scatter')
+def scatter_plot():
+    return render_template("plot_scatter.html")
 
 ################################
 ####### BACKEND ###############
