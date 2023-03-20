@@ -1,6 +1,6 @@
 // STEP 1
 
-// Get the samples URL
+// Get the API URL
 
 const url = "http://127.0.0.1:5000/api/all-data-json";
 // const dropdown = document.getElementById("suburbSelect");
