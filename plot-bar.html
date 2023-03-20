@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Melb Rental Market Bedroom barchart</title>
+    <!-- include D3 library -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- include Plotly library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- include JavaScript file for chart data -->
+    <script src="plot_bar.js"></script>
+  </head>
+
+  <body>
+    <h1>Number of Bedrooms by suburb</h1>
+    <label for="dropdown">Select a suburb:</label>
+    <!-- dropdown list -->
+    <select id="suburbSelect" onchange="optionChanged(this.value)"></select>
+    <!-- space for chart -->
+    <div id="bar"></div>
+  </body>
+</html>
+
