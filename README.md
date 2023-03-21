@@ -18,6 +18,9 @@ Person A has just been accepted into the 2024 Masters in Data Analytics program 
 *Currently there is no ‘one stop shop’ view of Melbourne’s suburbs to provide new international students this view of our great city. Students must search across multiple websites (e.g. RealEstate.com, Visit Melbourne, Youtube etc). The Melbourne Rental Market Dashboard aims to solve this gap in the market.*
 
 
+## 	:white_check_mark: How to start the application
+xxxxx
+
 ## :bar_chart: Dashboard Components
 The Melbourne Rental Market Dashboard includes the following:
 - Home Page
