@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Basic Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+  <!-- Leaflet.markercluster CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+  <!-- Leaflet.markercluster JavaScript code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+
+  <!-- Our CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="templates/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="static/map_style.css">
+
+  <!DOCTYPE html>
+  <html>      
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta http-equiv="refresh" content="30">
+  
+  </head>
+  
+  <!-- Sidebar on click -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+      </a>
+      <a href="#" class="w3-bar-item w3-button">Github Repository</a>
+      <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
+      <a href="/api/geojson" class="w3-bar-item w3-button">API GEOJSON</a>
+    </nav>
+    
+  <!-- Navbar -->
+  <div class="w3-top">
+      <div class="w3-bar w3-theme-d2 w3-left-align">
+       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+       <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+       <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+       <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
+     
+        <div class="w3-dropdown-hover w3-hide-small">
+         <button class="w3-button">Data Vizualisation <i class="fa fa-caret-down"></i></button>     
+         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="/data-viz/pie" class="w3-bar-item w3-button">Pie Chart</a>
+                <a href="/data-viz/bar" class="w3-bar-item w3-button">Bar Chart</a>
+                <a href="/data-viz/scatter" class="w3-bar-item w3-button">Scatter Plot</a>
+         </div>
+       </div>
+      </div>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3">
+  
+      <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
+      <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
+      
+    </div>
+  </div>
+  <br>
+</head>
+<br>
+
+<body>
+
+    <!-- Sidebar on click -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        <i class="fa fa-remove"></i>
+      </a>
+      <a href="#" class="w3-bar-item w3-button">Github Repository</a>
+      <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
+      <a href="/api/geojson" class="w3-bar-item w3-button">API GEOJSON</a>
+    </nav>
+    
+  <!-- Navbar -->
+  <div class="w3-top">
+      <div class="w3-bar w3-theme-d2 w3-left-align">
+       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+       <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+       <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+       <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
+     
+        <div class="w3-dropdown-hover w3-hide-small">
+         <button class="w3-button">Data Vizualisation <i class="fa fa-caret-down"></i></button>     
+         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="/data-viz/pie" class="w3-bar-item w3-button">Pie Chart</a>
+                <a href="/data-viz/bar" class="w3-bar-item w3-button">Bar Chart</a>
+                <a href="/data-viz/scatter" class="w3-bar-item w3-button">Scatter Plot</a>
+         </div>
+       </div>
+      </div>
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3">
+  
+      <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
+      <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
+      
+    </div>
+  </div>
+  
+    <!-- The div where we'll insert our map -->
+      <!-- <div id="dropdown">
+          <select id="suburbSelect"></select>
+      </div> -->
+      <button type="submit" id="300-400">300-400</button>
+      <button type="submit" id="401-500">401-500</button>
+      <button type="submit" id="501-600">501-600</button>
+      <div id="map"></div>
+  
+    <!-- JavaScript file -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="static/map.js"></script>
+    <!-- <script type="text/javascript" src="static/map_2.js"></script> -->
+  </body>
+
+</html>

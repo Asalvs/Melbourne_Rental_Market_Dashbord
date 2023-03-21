@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>      
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="refresh" content="30">
+
+    <title>Scatter Plot</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+      <i class="fa fa-remove"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button">Github Repository</a>
+    <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
+    <a href="/api/geojson" class="w3-bar-item w3-button">API GEOJSON</a>
+  </nav>
+  
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+     <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+     <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+     <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
+   
+      <div class="w3-dropdown-hover w3-hide-small">
+       <button class="w3-button">Data Vizualisation <i class="fa fa-caret-down"></i></button>     
+       <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="/data-viz/pie" class="w3-bar-item w3-button">Pie Chart</a>
+              <a href="/data-viz/bar" class="w3-bar-item w3-button">Bar Chart</a>
+              <a href="/data-viz/scatter" class="w3-bar-item w3-button">Scatter Plot</a>
+       </div>
+     </div>
+    </div>
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3">
+
+    <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
+    <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
+    
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <title>Scatter Plot</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+  <div id="chart" style="margin: 0 auto; width: 80%; height: 500px;"></div>
+  <script src="../static/plot_scatter.js"></script>
+</body>
+</html>
