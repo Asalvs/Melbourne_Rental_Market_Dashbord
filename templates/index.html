@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <title>{{title}} </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="refresh" content="30">
+  </head>
+
+  <body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Github Repository</a>
+  <a href="/api/all-data-json" class="w3-bar-item w3-button">API JSON</a>
+  <a href="/api/geojson" class="w3-bar-item w3-button">API GEOJSON</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+  <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
+
+   <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button">Data Visualisation <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="/data-viz/pie" class="w3-bar-item w3-button">Pie Chart</a>
+          <a href="/data-viz/bar" class="w3-bar-item w3-button">Bar Chart</a>
+          <a href="/data-viz/scatter" class="w3-bar-item w3-button">Scatter Plot</a>
+    </div>
+  </div>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">Team</a>
+    <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
+    <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
+    
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="https://visme.co/blog/wp-content/uploads/2018/09/the-25-best-data-visualization_header.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+
+  </div>
+</div>
+
+    </header>
+  
+    <footer class="w3-container w3-teal">
+      <p> </p>
+    </footer>
+  </div>
+</div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>TEAM GROUP 6</h2>
+<p>Meet the amazing team:</p>
+
+<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="https://i.pinimg.com/736x/ab/a3/8e/aba38e1784bab956676a875212874376.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Dhiraj</h3>
+  <p>Data Vizualisation</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://img.freepik.com/premium-vector/head-cute-corgi-dog-icon-flat-design-vector-illustration_650087-34.jpg?w=2000" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Dominique</h3>
+  <p>Frontend</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQPUowGWMuPioic2XexO7UfbJglniLfWsIGQ&usqp=CAU" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3> Eloise </h3>
+  <p>Data Vizualisation</p>
+</div>
+
+<div class="w3-quarter">
+  <img src="https://img.freepik.com/premium-vector/dog-icon-flat-design_218319-5884.jpg?w=2000" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Asal</h3>
+  <p>Backend</p>
+</div>
+
+</div>
+</div>
+
+<!-- Overview Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div class="w3-half">
+<h2>Data Visualisation Tools and Libraries</h2>
+
+<h3>
+<img src="https://www.pngfind.com/pngs/m/62-626208_python-logo-png-transparent-background-python-logo-png.png" alt="Python" style="width:10%" class="w3-circle w3-hover-opacity" >
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png" alt="Javascipt" style="width:10%" class="w3-circle w3-hover-opacity">
+<img src = "https://cdn.freebiesupply.com/logos/thumbs/2x/leaflet-1-logo.png" alt="Leaflet" style="width:20%" class="w3-circle w3-hover-opacity">
+<img src = "https://www.kindpng.com/picc/m/188-1882416_flask-python-logo-hd-png-download.png" alt="Leaflet" style="width:15%" class="w3-circle w3-hover-opacity">
+<img src = "https://caefn.com/wp-content/uploads/2019/06/chartjs-e1560684806991.png" alt="Chart.js" style="width:15%" class="w3-circle w3-hover-opacity">
+<img src = "https://www.vectorlogo.zone/logos/d3js/d3js-ar21.png" alt="D3.js" style="width:20%" class="w3-circle w3-hover-opacity">
+
+
+</h3>
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-teal">
+  <p> </p>
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+
+
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
