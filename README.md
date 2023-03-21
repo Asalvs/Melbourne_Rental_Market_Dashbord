@@ -20,13 +20,16 @@ Person A has just been accepted into the 2024 Masters in Data Analytics program 
 
 ## Dashboard Components
 The Melbourne Rental Market Dashboard includes the following:
-- Overview/landing page
+- Home Page
+- Project Overview page
 - Market Map page
 - Pie chart page
 - Bar chart page
 - Scatter plot page
 
-These call on Leaflet (mapping), Plotly (graphs/charts), D3 and Video (introductory video) JS libraries.
+Note:
+- The side navigation bar provides quick access to the raw JSON & GeoJSON
+- These call on Leaflet (mapping), Plotly (graphs/charts), Chart (graphs/charts), D3 and Video (introductory video) JS libraries.
 # SCREENSHOTS REQUIRED
 
 
