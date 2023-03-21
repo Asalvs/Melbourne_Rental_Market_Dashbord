@@ -35,3 +35,9 @@ Note:
 
 ## Development Workflow
 *TBD - WILL PULL FROM GOOGLE SLIDES ONCE COMPLETED*
+
+
+### Navigating the Repository
+See "xxx' for HTML files
+See 'xxxx' for JS files
+See 'xxx' for ETL/database files & API
