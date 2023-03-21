@@ -2,11 +2,12 @@
 
 <sub> 
 Group members:
-Asal Valisoltani
-Dhiraj Kapoor
-Dominique Dela Cruz
-Eloise Moran
+- Asal Valisoltani
+- Dhiraj Kapoor
+- Dominique Dela Cruz
+- Eloise Moran
 </sub>
+
 
 ## Problem Statement
 Person A has just been accepted into the 2024 Masters in Data Analytics program at RMIT, Melbourne, Australia. They are preparing Visa documents and the Immigration Office requires them to find housing before they move to Australia. They would like to find a place that suits the below needs:
@@ -26,6 +27,8 @@ The Melbourne Rental Market Dashboard includes the following:
 - Scatter plot page
 
 These call on Leaflet (mapping), Plotly (graphs/charts), D3 and Video (introductory video) JS libraries.
+# SCREENSHOTS REQUIRED
 
 
 ## Development Workflow
+*TBD - WILL PULL FROM GOOGLE SLIDES ONCE COMPLETED*
