@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="refresh" content="30">
+    <title> Pie Chart</title>
 
-    <title>Overview</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <!-- Sidebar on click -->
@@ -28,7 +26,7 @@
     <div class="w3-bar w3-theme-d2 w3-left-align">
      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
      <a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-     <a href="/overview", class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
+     <a href="/overview" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Project Overview</a>
      <a href="/rental-map" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Rental Map</a>
    
       <div class="w3-dropdown-hover w3-hide-small">
@@ -40,105 +38,27 @@
        </div>
      </div>
     </div>
-
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3">
+
     <a href="/overview" class="w3-bar-item w3-button">Project Overview</a>
     <a href="/rental-map" class="w3-bar-item w3-button">Rental Map</a>
     
   </div>
 </div>
-
+<br>
 
 <body>
-    <div id="chart" align = center></div>
-    <div id="dropdown">
-        <select id="suburbSelect"></select>
-    </div>
 
-    <script>
-        const url = "http://127.0.0.1:5000/api/all-data-json";
-        const chartDiv = document.getElementById("chart");
-        const dropdown = document.getElementById("suburbSelect");
+  <br>
+<h3> Rental Property Types in Melbourne (by Suburb) </h3>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        // Load data from JSON file
-        d3.json(url).then(function (data) {
-            const suburbs = [...new Set(data.map(d => d.Suburb))];
-            const types = [...new Set(data.map(d => d.Type))];
-
-            // Create initial pie chart
-            const chartData = createDataForSuburb(data, suburbs[0]);
-            createChart(chartData);
-
-            // Populate dropdown menu
-            populateDropdown(suburbs);
-
-            // Add change event listener to dropdown
-            dropdown.addEventListener("change", function () {
-                const selectedSuburb = this.value;
-                const newData = createDataForSuburb(data, selectedSuburb);
-                updateChart(newData);
-            });
-
-            function createDataForSuburb(data, suburb) {
-                const filteredData = data.filter(d => d.Suburb === suburb);
-                const typeCount = {};
-
-                types.forEach(function (type) {
-                    const count = filteredData.filter(d => d.Type === type).length;
-                    typeCount[type] = count;
-                });
-
-                return {
-                    values: Object.values(typeCount),
-                    labels: Object.keys(typeCount),
-                    type: "pie"
-                };
-            }
-
-            function createChart(data) {
-                const layout = {
-                    title: "Property Types by Suburb",
-                    height: 500,
-                    width: 700
-                };
-
-                Plotly.newPlot(chartDiv, [data], layout);
-            }
-
-            function updateChart(data) {
-                const chartData = {
-                    values: data.values,
-                    labels: data.labels,
-                    type: "pie"
-                };
-
-                Plotly.react(chartDiv, [chartData]);
-            }
-
-            function populateDropdown(suburbs) {
-                suburbs.forEach(function (suburb) {
-                    const option = document.createElement("option");
-                    option.text = suburb;
-                    dropdown.add(option);
-                });
-            }
-        });
-    </script>
- <script>
-
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
- </script>   
-
-</script>
+  <div id="chart">
+    <canvas></canvas>
+  </div>
+  
+  <select id="suburbSelect"></select>
+  <script src="../static/plot_pie.js"></script>
 </body>
 </html>

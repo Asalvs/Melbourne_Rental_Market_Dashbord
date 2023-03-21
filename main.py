@@ -11,8 +11,6 @@ import os
 import json
 
 
-
-
 ##### Database Set-up ##########
 engine = create_engine("sqlite:///Melbourne.db")
 Base = automap_base()
