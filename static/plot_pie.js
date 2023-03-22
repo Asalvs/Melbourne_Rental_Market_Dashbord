@@ -1,21 +1,25 @@
 const url = "http://127.0.0.1:5000/api/all-data-json";
-const chartCanvas = document.createElement("canvas");
-const chartDiv = document.getElementById("chart");
-chartDiv.appendChild(chartCanvas);
+const chartCanvas1 = document.createElement("canvas");
+const chartCanvas2 = document.createElement("canvas");
+const chartDiv1 = document.getElementById("chart1");
+const chartDiv2 = document.getElementById("chart2");
+chartDiv1.appendChild(chartCanvas1);
+chartDiv2.appendChild(chartCanvas2);
 const dropdown = document.getElementById("suburbSelect");
 
-let chart; // Declare chart variable outside of createChart function
+let chart1, chart2; // Declare chart variables outside of createChart function
 
 // Load data from JSON file
 fetch(url)
   .then(response => response.json())
   .then(data => {
     const suburbs = [...new Set(data.map(d => d.Suburb))];
-    const types = [...new Set(data.map(d => d.Type))];
 
-    // Create initial pie chart
-    const chartData = createDataForSuburb(data, suburbs[0]);
-    createChart(chartCanvas, chartData);
+    // Create initial pie charts
+    const chart1Data = createDataForSuburb(data, suburbs[0], 'Type');
+    const chart2Data = createDataForSuburb(data, suburbs[0], 'Real_Estate_Agent');
+    createChart(chartCanvas1, chart1Data, 'Type');
+    createChart(chartCanvas2, chart2Data, 'Real_Estate_Agent');
 
     // Populate dropdown menu
     populateDropdown(suburbs);
@@ -23,49 +27,70 @@ fetch(url)
     // Add change event listener to dropdown
     dropdown.addEventListener("change", function () {
       const selectedSuburb = this.value;
-      const newData = createDataForSuburb(data, selectedSuburb);
-      updateChart(newData);
+      const newData1 = createDataForSuburb(data, selectedSuburb, 'Type');
+      const newData2 = createDataForSuburb(data, selectedSuburb, 'Real_Estate_Agent');
+      updateChart(chart1, newData1);
+      updateChart(chart2, newData2);
     });
 
-    function createDataForSuburb(data, suburb) {
+    function createDataForSuburb(data, suburb, category) {
       const filteredData = data.filter(d => d.Suburb === suburb);
-      const typeCount = {};
-      types.forEach(function (type) {
-        const count = filteredData.filter(d => d.Type === type).length;
-        typeCount[type] = count;
-      });
-      
-      const legendLabels = ['Unit', 'House', 'Townhouse'];
-      const labels = Object.keys(typeCount).map(function (label) {
-        if (label === 'u') {
-          return legendLabels[0];
-        } else if (label === 'h') {
-          return legendLabels[1];
-        } else if (label === 't') {
-          return legendLabels[2];
-        } else {
-          return label;
-        }
-      });
-    
-      return {
-        data: Object.values(typeCount),
-        labels: labels,
-        legendLabels: legendLabels,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.7)',
-          'rgba(54, 162, 235, 0.7)',
-          'rgba(255, 206, 86, 0.7)',
-          'rgba(75, 192, 192, 0.7)',
-          'rgba(153, 102, 255, 0.7)',
-          'rgba(255, 159, 64, 0.7)',
-          'rgba(255, 99, 132, 0.7)'
-        ]
-      };
+
+      if (category === 'Type') {
+        const typeCount = {};
+        const types = [...new Set(data.map(d => d.Type))];
+        types.forEach(function (type) {
+          const count = filteredData.filter(d => d.Type === type).length;
+          typeCount[type] = count;
+        });
+
+        const labels = Object.keys(typeCount).map(function (label) {
+          return label === 'u' ? 'Unit' : label === 'h' ? 'House' : 'Townhouse';
+        });
+
+        return {
+          data: Object.values(typeCount),
+          labels: labels,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)',
+            'rgba(255, 159, 64, 0.7)',
+            'rgba(255, 99, 132, 0.7)'
+          ]
+        };
+      } else if (category === 'Real_Estate_Agent') {
+        const agentCount = {};
+
+        filteredData.forEach(d => {
+          if (agentCount[d.Real_Estate_Agent]) {
+            agentCount[d.Real_Estate_Agent]++;
+          } else {
+            agentCount[d.Real_Estate_Agent] = 1;
+          }
+        });
+
+        // Sort real estate agents by count and select the top 5
+        const sortedAgents = Object.entries(agentCount).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+        return {
+          data: sortedAgents.map(agent => agent[1]),
+          labels: sortedAgents.map(agent => agent[0]),
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)'
+          ]
+        };
+      }
     }
 
-    function createChart(canvas, data) {
-      const newLocal = 'top';
+    function createChart(canvas, data, category) {
+      const title = category === 'Type' ? 'Rental Property Types in Melbourne (by Suburb)' : 'Top 5 Real Estate Agents (by Suburb)';
       chart = new Chart(canvas, {
         type: 'doughnut',
         data: {
@@ -75,36 +100,29 @@ fetch(url)
         options: {
           responsive: true,
           maintainAspectRatio: true,
-          aspectRatio: 4,
-          width: 10,
-          height: 50,
+          aspectRatio: 2,
           title: {
             display: true,
-            text: "Rental Property types In Melbourne",
-            position: "top",
+            text: title,
+            position: "center",
             align: "center",
-            fontSize: 18,
+            fontSize: 20,
             fontColor: "red"
-          },
-
+          }
         }
       });
+
+      if (category === 'Type') {
+        chart1 = chart;
+      } else {
+        chart2 = chart;
+      }
     }
 
-    function updateChart(data) {
+    function updateChart(chart, data) {
       chart.data.datasets.pop();
       chart.data.datasets.push(data);
-      chart.data.labels = data.labels.map(function (label) {
-        if (label === 'u') {
-          return 'Units';
-        } else if (label === 'h') {
-          return 'House';
-        } else if (label === 't') {
-          return 'Townhouse';
-        } else {
-          return label;
-        }
-      });
+      chart.data.labels = data.labels;
       chart.update();
     }
 

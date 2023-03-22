@@ -12,8 +12,8 @@ Person A has just been accepted into the 2024 Masters in Data Analytics program 
 
 
 ## ✅ How to start the application
-1. Run Flask app through main.py file or through commandline, enter python main.py 
-2. Explore pages from local server (http://127.0.0.1:5000)
+1. RUN Flask app through main.py file
+2. Explore pages from local server ( insert local server)
 
 
 ## 📊 Dashboard Components

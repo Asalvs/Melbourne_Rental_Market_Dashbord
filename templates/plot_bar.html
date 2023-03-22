@@ -6,11 +6,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta http-equiv="refresh" content="30">
+
 
     <title>Bar Chart</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+      body {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/000/597/495/original/vector-gradient-blurred-blue-abstract-background.jpg");
+        background-size: cover;
+      }
+  </style>
+
 </head>
 
 <!-- Sidebar on click -->
@@ -54,7 +62,7 @@
 <body>
     <div id="chart" style="display: flex; align-items: center; justify-content: center; height: 100vh;"></div>
     <div id="dropdown">
-        <select id="suburbSelect"></select>
+        <select id="suburbSelect" style="position: absolute; top: 230px; left: 250px; z-index: 1;"></select>
     </div>
     <script src="../static/plot_bar.js"></script>
 </body>

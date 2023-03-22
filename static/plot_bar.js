@@ -33,7 +33,8 @@ d3.json(url).then(function (data) {
     return {
       x: Object.keys(typeCount),
       y: Object.values(typeCount),
-      type: "bar"
+      type: "bar",
+      marker: { color: "rgba(58, 200, 225, 0.7)", line: { color: "rgba(58, 200, 225, 1)", width: 1.5 } } // Customize bar appearance
     };
   }
 
@@ -43,30 +44,44 @@ d3.json(url).then(function (data) {
       height: 500,
       width: 700,
       xaxis: {
-        title: "Number of Bedrooms"
+        title: "Number of Bedrooms",
+        tickfont: { size: 14, color: "#333"} // Customize x-axis tick labels
       },
       yaxis: {
-        title: "Count"
-      }
-    
+        title: "Count",
+        tickfont: { size: 14, color: "#333" } // Customize y-axis tick labels
+      },
+      plot_bgcolor: "#f4f4f4", // Change plot background color
+      margin: { t: 40, b: 40, l: 80, r: 10 } // Adjust chart margins
     };
 
     Plotly.newPlot(chartDiv, [data], layout);
   }
 
   function updateChart(data) {
-    const chartData = {
-      x: data.x,
-      y: data.y,
-      type: "bar"
+    const chartData = [data];
+    const layout = {
+      title: "Number of Bedrooms per Suburb",
+      height: 500,
+      width: 700,
+      xaxis: {
+        title: "Number of Bedrooms",
+        tickfont: { size: 14, color: "#333" }
+      },
+      yaxis: {
+        title: "Count",
+        tickfont: { size: 14, color: "#333" }
+      },
+      plot_bgcolor: "#f4f4f4",
+      margin: { t: 40, b: 40, l: 80, r: 10 }
     };
 
-    Plotly.react(chartDiv, [chartData]);
+    Plotly.react(chartDiv, chartData, layout);
   }
 
   function populateDropdown(suburbs) {
     suburbs.forEach(function (suburb) {
-      const option = document.createElement("option");
+      const option= document.createElement("option");
       option.text = suburb;
       dropdown.add(option);
     });

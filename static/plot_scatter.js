@@ -13,27 +13,59 @@ d3.json(url).then(function (data) {
       type: 'scatter',
       name: suburb,
       marker: {
-        size: 10,
-        opacity: 0.75
+        size: 11.2,
+        opacity:2
       }
     }
   });
 
   const layout = {
-    title: 'Average Rent vs Distance from CBD',
+    title: {
+      text: 'Average Rent vs Distance from CBD',
+      font: {
+        size: 24,
+        family: 'Arial',
+        color: '#333'
+      }
+    },
     xaxis: {
-      title: 'Distance from Melbourne CBD (km)'
+      title: {
+        text: 'Distance from Melbourne CBD (km)',
+        font: {
+          size: 18,
+          family: 'Arial',
+          color: '#333'
+        }
+      },
+      tickfont: {
+        size: 14,
+        family: 'Arial',
+        color: '#333'
+      }
     },
     yaxis: {
-      title: 'Average Rent (AU$ pw)'
+      title: {
+        text: 'Average Rent (AU$ pw)',
+        font: {
+          size: 18,
+          family: 'Arial',
+          color: '#333'
+        }
+      },
+      tickfont: {
+        size: 14,
+        family: 'Arial',
+        color: '#333'
+      }
     },
     height: 700,
     width: 1500,
     legend: {
       x: 1,
       y: 1
-    }
+    },
+    plot_bgcolor: "rgba(0, 0, 0, 0)",
+    paper_bgcolor: "rgba(0, 0, 0, 0)"
   };
-
   Plotly.newPlot(chartDiv, traces, layout);
 });

@@ -6,8 +6,24 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta http-equiv="refresh" content="30">
-    <title> Pie Chart</title>
+
+    <title> Pie Charts</title>
+    <style>
+      body {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/000/597/495/original/vector-gradient-blurred-blue-abstract-background.jpg");
+        background-size: cover;
+      }
+      h3 {
+        display: block;
+        font-size: 2.5em;
+        margin-top: 0.33em;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+  </style>
+  
 
 </head>
 
@@ -51,14 +67,25 @@
 <body>
 
   <br>
-<h3> Rental Property Types in Melbourne (by Suburb) </h3>
+  <h3> Rental Property Types and Real Estate Agents in Melbourne (by Suburb) </h3>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <div id="chart">
-    <canvas></canvas>
+  <div class="w3-row">
+    <div class="w3-col m6">
+
+      <h4 align="center"> Property Types</h4>
+      <div id="chart1">
+        <canvas></canvas>
+      </div>
+    </div>
+    <div class="w3-col m6">
+      <h4 align="center">Real Estate Agents</h4>
+      <div id="chart2">
+        <canvas></canvas>
+      </div>
+    </div>
   </div>
-  
-  <select id="suburbSelect"></select>
+  <select id="suburbSelect" style="position: absolute; bottom: 100px; left: 840px; z-index: 1;"></select>
   <script src="../static/plot_pie.js"></script>
 </body>
 </html>
