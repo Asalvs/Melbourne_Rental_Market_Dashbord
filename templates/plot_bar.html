@@ -17,6 +17,28 @@
         background-image: url("https://static.vecteezy.com/system/resources/previews/000/597/495/original/vector-gradient-blurred-blue-abstract-background.jpg");
         background-size: cover;
       }
+      
+      #suburbSelect {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5%;
+      }
+      
+      /* Media query for mobile devices */
+      @media only screen and (max-width: 600px) {
+        #suburbSelect {
+          top: 10%;
+        }
+      }
+      
+      /* Media query for desktop devices */
+      @media only screen and (min-width: 601px) {
+        #suburbSelect {
+          top: 5%;
+        }
+      }
   </style>
 
 </head>

@@ -1,5 +1,6 @@
 const url = "http://127.0.0.1:5000/api/all-data-json";
-const chartDiv = document.getElementById("chart");
+var chartDiv = document.getElementById('chart');
+
 
 // Load data from JSON file
 d3.json(url).then(function (data) {
@@ -58,8 +59,9 @@ d3.json(url).then(function (data) {
         color: '#333'
       }
     },
-    height: 700,
-    width: 1500,
+    autosize: true,
+    height: null,
+    width: null,
     legend: {
       x: 1,
       y: 1
@@ -67,5 +69,12 @@ d3.json(url).then(function (data) {
     plot_bgcolor: "rgba(0, 0, 0, 0)",
     paper_bgcolor: "rgba(0, 0, 0, 0)"
   };
-  Plotly.newPlot(chartDiv, traces, layout);
+
+  Plotly.newPlot(chartDiv, traces, layout, {responsive: true});
+
+});
+
+// Resize the chart when the window is resized
+window.addEventListener('resize', function() {
+  Plotly.Plots.resize(chartDiv);
 });

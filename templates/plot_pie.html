@@ -22,6 +22,40 @@
         margin-right: 0;
         font-weight: bold;
       }
+    
+      #mySidebar {
+        z-index: 2;
+      }
+    
+      #chart1 canvas,
+      #chart2 canvas {
+        z-index: 1;
+      }
+    
+      #suburbSelect {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5%;
+        width: 200px;
+      }
+  
+      /* Media query for mobile devices */
+      @media only screen and (max-width: 600px) {
+        #suburbSelect {
+          bottom: 10%;
+          width: 90%;
+        }
+      }
+  
+      /* Media query for desktop devices */
+      @media only screen and (min-width: 601px) {
+        #suburbSelect {
+          bottom: 5%;
+          width: 200px;
+        }
+      }
   </style>
   
 
