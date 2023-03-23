@@ -30,12 +30,15 @@ The Melbourne Rental Market Dashboard includes the following:
 - The side navigation bar provides quick access to the raw JSON & GeoJSON
 - The site calls on Leaflet (mapping), Plotly (graphs/charts), Chart (graphs/charts), D3 and Video (introductory video) JS libraries.
 
-**SCREENSHOTS REQUIRED**
 
 
 ## 🖥️ Development Workflow
-TBD - WILL PULL FROM GOOGLE SLIDES ONCE COMPLETED
+![image](https://user-images.githubusercontent.com/118158748/227122288-49c6c069-52f6-4c1f-aebb-f3f3efca776a.png)
+
 
 
 ###📚 Navigating the Repository
-See "xxx' for HTML files See 'xxxx' for JS files See 'xxx' for ETL/database files & API
+- See **data** for JSON, GeoJSON files
+- See **static** for JS & CSS styling files
+- See **templates** for main HTML (index.html) & supporting html pages
+- Supporting files (e.g. database & Flask code) can be found in the main section
