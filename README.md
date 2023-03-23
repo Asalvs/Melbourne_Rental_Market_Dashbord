@@ -37,7 +37,7 @@ The Melbourne Rental Market Dashboard includes the following:
 
 
 
-###📚 Navigating the Repository
+### 📚 Navigating the Repository
 - See **data** for JSON, GeoJSON files
 - See **static** for JS & CSS styling files
 - See **templates** for main HTML (index.html) & supporting html pages
